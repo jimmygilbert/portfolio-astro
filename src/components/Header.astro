@@ -1,0 +1,53 @@
+---
+const pathname = Astro.url.pathname;
+---
+
+<header>
+	<div class="container pb-4">
+		<div class="row align-items-center">
+			<!-- Photo de profil -->
+			<div class="col-12 col-lg-3 col-xl-2 d-none d-lg-block">
+				<a href="/" class="d-block">
+					<img src="/logo.png" alt="Logo Jimmy Gilbert" class="logo-img">
+				</a>
+			</div>
+			<!-- Titre et sous-titre -->
+			<div class="col-12 col-lg-6 col-xl-8">
+				<p class="site-title display-4 mb-0 text-center fs-1 fs-xl-4"><a href="/" class="text-warning text-decoration-none">Jimmy Gilbert</a></p>
+				<p class="site-subtitle text-center fs-6 fs-xl-5 pt-2">&lt;!-- COACH TECHNO --&gt;</p>
+			</div>
+			<!-- Réseaux sociaux -->
+			<div class="col-12 col-lg-3 col-xl-2 d-none d-lg-block">
+				<div class="d-flex justify-content-end gap-3">
+					<ul class="list-unstyled gap-3 mb-0">
+						<li><a href="#" class="fs-5"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+						<li><a href="#" class="fs-5"><i class="bi bi-youtube"></i> Youtube</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Navigation -->
+	<div class="container pb-4">
+		<div class="row justify-content-between g-4">
+			<div class="col-md-4 col-4">
+				<a href="/about" class={`btn btn-warning border-2 w-100 py-3 ${pathname === '/about' ? 'active' : ''}`}>
+					<span class="d-none d-md-inline">Me connaître</span>
+					<i class="bi bi-person d-md-none fs-4"></i>
+				</a>
+			</div>
+			<div class="col-md-4 col-4">
+				<a href="/projects" class={`btn btn-warning border-2 w-100 py-3 ${pathname === '/projects' ? 'active' : ''}`}>
+					<span class="d-none d-md-inline">Mes projets</span>
+					<i class="bi bi-code-slash d-md-none fs-4"></i>
+				</a>
+			</div>
+			<div class="col-md-4 col-4">
+				<a href="/contact" class={`btn btn-warning border-2 w-100 py-3 ${pathname === '/contact' ? 'active' : ''}`}>
+					<span class="d-none d-md-inline">Me contacter</span>
+					<i class="bi bi-at d-md-none fs-4"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>

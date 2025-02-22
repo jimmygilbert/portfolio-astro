@@ -1,0 +1,157 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+  font-family: "TrajanPro";
+  src: url("/fonts/TrajanPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Variables de couleur personnalisées */
+  --site-background: #2f3b3f;
+  --site-link: #ffd700;
+  --site-info: #66d9ef;
+  --site-text: #ffffff;
+  --site-dark: #21282a;
+  --site-error: #c24743;
+
+  /* Personnalisation des variables Bootstrap */
+  --bs-primary: var(--site-link);
+  --bs-secondary: var(--site-background);
+  --bs-info: var(--site-info);
+  --bs-warning: var(--site-link);
+  --bs-danger: var(--site-error);
+  --bs-success: #28a745; /* Gardé la couleur Bootstrap par défaut */
+  --bs-light: var(--site-text);
+  --bs-dark: var(--site-dark);
+
+  /* Variables RGB pour les opacités */
+  --bs-primary-rgb: 255, 215, 0;
+  --bs-secondary-rgb: 47, 59, 63;
+  --bs-info-rgb: 102, 217, 239;
+  --bs-warning-rgb: 255, 215, 0;
+  --bs-danger-rgb: 194, 71, 67;
+  --bs-success-rgb: 32, 144, 220;
+  --bs-light-rgb: 255, 255, 255;
+  --bs-dark-rgb: 33, 40, 42;
+
+  /* Variables dérivées */
+
+  /* Variables pour le thème sombre */
+  --bs-body-bg: var(--site-dark);
+  --bs-body-color: var(--site-text);
+  --bs-link-color: var(--site-link);
+  --bs-link-hover-color: var(--site-link);
+  --bs-container-max-width-xl: 1200px;
+  --bs-body-font-family: "Segoe UI";
+}
+
+body {
+  font-family: var(--bs-body-font-family), var(--bs-font-sans-serif);
+  background-color: var(--bs-body-bg);
+  background-image: url("/fond.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--bs-body-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--site-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--site-link);
+  text-decoration: underline;
+}
+
+a.btn:hover {
+  text-decoration: none;
+  border-color: var(--site-text);
+}
+
+strong {
+  color: var(--site-info);
+}
+
+main {
+  width: 100%;
+  margin: auto;
+  flex: 1;
+
+  background-color: var(--bs-dark);
+  max-width: var(--bs-container-max-width-xl);
+  border-left: 2px solid var(--bs-light);
+  border-right: 2px solid var(--bs-light);
+}
+
+header,
+footer {
+  width: 100%;
+  margin: auto;
+  background-color: var(--site-background);
+  max-width: var(--bs-container-max-width-xl);
+  border-left: 2px solid var(--bs-light);
+  border-right: 2px solid var(--bs-light);
+}
+
+/* Style du bouton actif dans la navigation */
+.btn.active {
+  border-color: var(--site-text);
+}
+
+/* Styles spécifiques au site */
+p.site-title {
+  font-family: "TrajanPro", serif;
+  color: var(--site-link);
+  letter-spacing: 0.25rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  text-shadow: var(--bs-box-shadow-sm);
+  border-bottom: 2px solid var(--site-text);
+  border-color: var(--site-link);
+}
+
+p.site-subtitle {
+  color: var(--site-info);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+/* Style de la vidéo YouTube */
+.youtube-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid var(--site-text);
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .youtube-container {
+    width: 250px;
+    height: 250px;
+  }
+}

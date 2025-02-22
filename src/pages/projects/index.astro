@@ -1,0 +1,56 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="container py-4">
+				<div class="row g-4">
+					<div class="col-12">
+						<div class="title text-center my-5">
+							<h1 class="display-4">Mes projets</h1>
+							<hr class="my-4" />
+						</div>
+					</div>
+					{
+						projects.map((project, index) => (
+							<div class={index === 0 ? "col-12" : "col-md-6"}>
+								<a href={`/projects/${project.id}/`} class="project-card text-decoration-none d-block">
+									<img 
+										width={720} 
+										height={360} 
+										src={project.data.heroImage} 
+										alt="" 
+										class="img-fluid mb-3"
+									/>
+									<h4 class={`title ${index === 0 ? "h2" : "h4"} mb-2`}>
+										{project.data.title}
+									</h4>
+									<p class="date mb-0">
+										<FormattedDate date={project.data.pubDate} />
+									</p>
+								</a>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

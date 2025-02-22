@@ -1,0 +1,75 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'projects'>['data'];
+const { title, description, pubDate, updatedDate, heroImage, technologies, githubUrl, demoUrl } = Astro.props;
+---
+
+<html lang="fr">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="container py-4">
+				<div class="row">
+					<div class="col-12">
+						<article class="project">
+							{heroImage && (
+								<div class="hero-image mb-4">
+									<img src={heroImage} alt="" class="img-fluid rounded shadow-sm" width={1020} height={510} />
+								</div>
+							)}
+							<div class="prose">
+								<div class="text-center mb-4">
+									<div class="text-secondary mb-2">
+										<FormattedDate date={pubDate} />
+										{
+											updatedDate && (
+												<div class="fst-italic">
+													Dernière mise à jour le <FormattedDate date={updatedDate} />
+												</div>
+											)
+										}
+									</div>
+									<h1 class="display-4">{title}</h1>
+									{technologies && technologies.length > 0 && (
+										<div class="d-flex gap-2 flex-wrap justify-content-center my-3">
+											{technologies.map(tech => (
+												<span class="tech-badge">{tech}</span>
+											))}
+										</div>
+									)}
+									{(githubUrl || demoUrl) && (
+										<div class="project-links d-flex gap-4 justify-content-center my-3">
+											{githubUrl && (
+												<a href={githubUrl} target="_blank" rel="noopener noreferrer">
+													<i class="fab fa-github"></i> GitHub
+												</a>
+											)}
+											{demoUrl && (
+												<a href={demoUrl} target="_blank" rel="noopener noreferrer">
+													<i class="fas fa-external-link-alt"></i> Démo
+												</a>
+											)}
+										</div>
+									)}
+									<hr class="my-4" />
+								</div>
+								<div class="content">
+									<slot />
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

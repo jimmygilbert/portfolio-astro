@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+---
+
+<Layout
+	title="Accueil"
+	description="Prenez contact avec moi pour discuter de vos projets ou pour toute question"
+	pubDate={new Date('March 19 2024')}
+	heroImage="/blog-placeholder-about.jpg"
+>
+	<div class="row align-items-center">
+		<div class="col-12 col-lg-4">
+			<!-- Vidéo YouTube -->
+			<div class="youtube-container mb-4 mb-md-0">
+				<iframe
+					src="https://www.youtube.com/embed/AuyFq9GNuGA?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&playsinline=1" 
+					title="Présentation"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					style="width: 550px; height: 310px; left: 130px; top: 140px;"
+					>
+				</iframe>
+			</div>
+		</div>
+		<div class="col-12 col-lg-8">
+			<div class="text-light">
+				<h2 class="display-5 mb-4">Bienvenue chez moi! :)</h2>
+				
+				<p class="lead mb-4">
+					Je suis un cordonnier mal chaussé et même si j'ai fait de très nombreux projets web, je n'avais jamais achevé mon site web...
+				</p>
+
+				<p class="mb-4">
+					Après mure réflexion, ai-je vraiment besoin de finaliser mon site?
+				</p>
+
+				<p class="mb-4">
+					Hé bien non! Ce site est une démonstration de mon savoir-faire, mais surtout une représentation du domaine du web: <span class="text-info">Un domaine en constante évolution !</span>
+				</p>
+
+				<p class="text-info fs-4">
+					Bonne visite !
+				</p>
+			</div>
+		</div>
+	</div>
+</Layout> 

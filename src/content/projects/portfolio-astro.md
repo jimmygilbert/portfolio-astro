@@ -1,8 +1,8 @@
 ---
 title: "Portfolio avec Astro"
 description: "Création de mon portfolio personnel avec Astro, un framework web moderne et performant"
-pubDate: "2025-02-23"
-heroImage: "/img/projects/portfolio-astro.png"
+pubDate: "2025-02-24"
+heroImage: "/img/projects/portfolio-astro.jpg"
 technologies: ["Astro", "TypeScript", "Bootstrap 5", "CSS3"]
 githubUrl: "https://github.com/jimmygilbert/portfolio-astro"
 demoUrl: "https://jimmygilbert.com"

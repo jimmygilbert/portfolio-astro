@@ -12,14 +12,12 @@
 - `src/types/` - Types TypeScript
 
 ## Conventions de Nommage
-
 - Fichiers de contenu: kebab-case `.md` ou `.mdx` (ex: `mon-projet.md`)
 - Composants: PascalCase `.astro` ou `.tsx` (ex: `ProjectCard.astro`)
 - Layouts: PascalCase avec suffixe "Layout" (ex: `BaseLayout.astro`)
 - Utils: camelCase (ex: `formatDate.ts`)
 
 ## Frontmatter des Contenus
-
 ```yaml
 ---
 title: Titre du contenu
@@ -93,7 +91,6 @@ export const collections = { projects };
 ### Framework CSS
 
 - Bootstrap 5 comme framework principal
-- Sass pour la personnalisation
 - Variables CSS pour la thématisation
 
 ### Accessibilité
